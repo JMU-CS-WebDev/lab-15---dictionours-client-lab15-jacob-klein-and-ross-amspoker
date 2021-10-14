@@ -7,13 +7,15 @@
     <title>task1, lab15</title>
 
     <style>
-        #cards {
+        #box {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
+        align-content: center;
         }
 
-        .card {
+        .searchBox {
         width: 200px;
         height: 100px;
         padding: 5px;
@@ -24,6 +26,20 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        }
+
+        .returnBox {
+        width: 200px;
+        padding: 5px;
+        margin: 5px;
+        box-sizing: border-box;
+        border: 2px solid black;
+
+        display: inline-block;
+        word-wrap: break-word;
+        /* flex-direction: column; */
+        /* justify-content: center; */
         align-items: center;
         }
 
@@ -51,12 +67,39 @@
     
 <body>
 
-    <div id="cards">
-        <div class="card add-card">
+    <div id="box">
+        <div class="searchBox">
           <input id="species-box" type="text">
-          <button id="new-button">Add</button>
+          <!-- <button id="new-button">search</button> -->
+        </div>
+        <div class ="returnBox">
+            <ol>
+                <li>A cat is a small animal often kept as a pet.</li>
+                <li>A dog is similar to a cat.</li>
+            </ol>
+            
+            <br><button>New Definition</button>
         </div>
       </div>
     
+      <script>
+          const entry = document.querySelector("#species");
+
+          const searcher = (query) => {
+            fetch("http://localhost:5000/:word")
+              .then(response => response.json())
+          }
+
+
+
+
+          entry.addEventListener("keydown", (ev)=>
+          {
+              if(ev.key == "Enter")
+              {
+                search(searchBox);
+              }
+          })
+      </script>
 </body>
 </html>

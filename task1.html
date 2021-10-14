@@ -5,8 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>task1, lab15</title>
+
+    <style>
+        #cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+
+        .card {
+        width: 200px;
+        height: 100px;
+        padding: 5px;
+        margin: 5px;
+        box-sizing: border-box;
+        border: 2px solid black;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .increment-card {
+        background-color: orange;
+        }
+
+        .increment-card:active {
+        background-color: darkorange;
+        }
+
+        h3 {
+        margin: 0;
+        font-size: 1.3em;
+        }
+
+        #species-box {
+        width: 160px;
+        margin-bottom: 10px;
+        }
+
+    </style>
 </head>
+
+    
 <body>
+
+    <div id="cards">
+        <div class="card add-card">
+          <input id="species-box" type="text">
+          <button id="new-button">Add</button>
+        </div>
+      </div>
     
 </body>
 </html>
